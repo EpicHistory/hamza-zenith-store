@@ -3,7 +3,7 @@ import { ShoppingCart, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { useToast } from '@/hooks/use-toast';
-import { getImageUrl } from '@/lib/api';
+
 
 interface Product {
   id: string;
@@ -56,7 +56,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         )}
         
         <img
-          src={imageFailed ? '/placeholder.svg' : getImageUrl(product.image)}
+          src={imageFailed ? '/placeholder.svg' : product.image}
           alt={product.title}
           className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-110 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
