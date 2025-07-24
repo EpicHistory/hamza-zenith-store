@@ -190,9 +190,9 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex gap-0">
           {/* Desktop Sidebar */}
-          <div className="hidden lg:block w-80 flex-shrink-0">
+          <div className="hidden lg:block w-80 flex-shrink-0 pr-6">
             <div className="sticky top-8 rounded-3xl bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 backdrop-blur-sm border border-primary/10 p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 rounded-xl bg-primary/10">
@@ -233,7 +233,7 @@ const Products = () => {
           </div>
 
           {/* Products Grid */}
-          <div className="flex-1">
+          <div className="flex-1 w-full">
             <ProductGrid 
               category={selectedCategory === 'all' ? undefined : selectedCategory}
               searchQuery={searchQuery}

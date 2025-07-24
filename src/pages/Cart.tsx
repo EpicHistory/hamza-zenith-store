@@ -49,7 +49,7 @@ const Cart = () => {
                 {/* Product Image */}
                 <div className="w-full sm:w-24 h-48 sm:h-24 rounded-xl overflow-hidden bg-muted flex-shrink-0">
                   <img
-                    src={getImageUrl(item.image)}
+                    src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />
