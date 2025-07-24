@@ -148,7 +148,7 @@
   }
 
   .card-product {
-    @apply bg-card border border-border rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden group;
+    @apply bg-card border border-border rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden;
   }
 
   /* Premium Input Styles */
