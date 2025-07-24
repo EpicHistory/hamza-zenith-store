@@ -190,7 +190,7 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="flex gap-8">
+        <div className="flex gap-6">
           {/* Desktop Sidebar */}
           <div className="hidden lg:block w-80 flex-shrink-0">
             <div className="sticky top-8 rounded-3xl bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 backdrop-blur-sm border border-primary/10 p-6">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
@@ -23,6 +24,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const [imageFailed, setImageFailed] = useState(false);
   const { addItem } = useCart();
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     addItem({
@@ -48,7 +50,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <div className="card-product group">
+    <div 
+      className="card-product group cursor-pointer"
+      onClick={() => navigate(`/product/${product.id}`)}
+    >
       {/* Image Container */}
       <div className="relative aspect-square overflow-hidden bg-muted">
         {!imageLoaded && (
@@ -72,7 +77,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
               size="icon"
               variant="secondary"
               className="rounded-full shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300 delay-100"
-              onClick={handleAddToCart}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleAddToCart();
+              }}
             >
               <ShoppingCart className="h-4 w-4" />
             </Button>
@@ -111,7 +119,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
           
           <Button 
             className="btn-primary"
-            onClick={handleAddToCart}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleAddToCart();
+            }}
           >
             Add to Cart
           </Button>
