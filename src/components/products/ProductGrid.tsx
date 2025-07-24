@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react';
 import { api } from '@/lib/api';
 import ProductCard from './ProductCard';
 import { Loader2 } from 'lucide-react';
+import { 
+  Pagination, 
+  PaginationContent, 
+  PaginationItem, 
+  PaginationLink, 
+  PaginationNext, 
+  PaginationPrevious 
+} from '@/components/ui/pagination';
 
 interface Product {
   id: string;
@@ -23,6 +31,10 @@ const ProductGrid = ({ limit, category, searchQuery, priceRange }: ProductGridPr
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
+  
+  const productsPerPage = 8;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -52,11 +64,13 @@ const ProductGrid = ({ limit, category, searchQuery, priceRange }: ProductGridPr
           );
         }
 
-        if (limit) {
-          filteredProducts = filteredProducts.slice(0, limit);
-        }
-
-        setProducts(filteredProducts);
+        setAllProducts(filteredProducts);
+        setCurrentPage(1);
+        
+        // Apply pagination
+        const startIndex = 0;
+        const endIndex = limit || productsPerPage;
+        setProducts(filteredProducts.slice(startIndex, endIndex));
       } catch (err) {
         setError('Failed to load products');
         console.error('Error fetching products:', err);
@@ -67,6 +81,17 @@ const ProductGrid = ({ limit, category, searchQuery, priceRange }: ProductGridPr
 
     fetchProducts();
   }, [limit, category, searchQuery, priceRange]);
+
+  // Update products when page changes
+  useEffect(() => {
+    if (!limit && allProducts.length > 0) {
+      const startIndex = (currentPage - 1) * productsPerPage;
+      const endIndex = startIndex + productsPerPage;
+      setProducts(allProducts.slice(startIndex, endIndex));
+    }
+  }, [currentPage, allProducts, limit]);
+
+  const totalPages = limit ? 1 : Math.ceil(allProducts.length / productsPerPage);
 
   if (loading) {
     return (
@@ -93,12 +118,49 @@ const ProductGrid = ({ limit, category, searchQuery, priceRange }: ProductGridPr
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {products.map((product) => (
-        <div key={product.id} className="animate-fade-in">
-          <ProductCard product={product} />
+    <div className="space-y-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <div key={product.id} className="animate-fade-in">
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
+      
+      {/* Pagination */}
+      {!limit && totalPages > 1 && (
+        <div className="flex justify-center mt-12">
+          <Pagination>
+            <PaginationContent className="gap-2">
+              <PaginationItem>
+                <PaginationPrevious 
+                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer hover:bg-primary/10"}
+                />
+              </PaginationItem>
+              
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <PaginationItem key={page}>
+                  <PaginationLink
+                    onClick={() => setCurrentPage(page)}
+                    isActive={currentPage === page}
+                    className="cursor-pointer w-10 h-10 rounded-xl border-2 transition-all duration-200 hover:bg-primary/10 data-[active]:bg-primary data-[active]:text-primary-foreground data-[active]:border-primary"
+                  >
+                    {page}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+              
+              <PaginationItem>
+                <PaginationNext 
+                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer hover:bg-primary/10"}
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </div>
-      ))}
+      )}
     </div>
   );
 };

@@ -208,12 +208,14 @@ const Products = () => {
           </div>
 
           {/* Mobile Filter Button & Sheet */}
-          <div className="lg:hidden mb-6">
+          <div className="lg:hidden">
             <Sheet open={showMobileFilters} onOpenChange={setShowMobileFilters}>
               <SheetTrigger asChild>
-                <Button variant="outline" className="w-full h-12 rounded-xl">
-                  <Filter className="h-4 w-4 mr-2" />
-                  Filter Products
+                <Button 
+                  size="icon"
+                  className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-2xl bg-primary hover:bg-primary/90 hover:scale-110 transition-all duration-300"
+                >
+                  <SlidersHorizontal className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-full sm:w-80">
