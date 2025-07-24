@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
-import { adminApi, getImageUrl } from '@/lib/api';
+import { adminApi } from '@/lib/api';
 
 interface Product {
   id: string;
@@ -263,7 +263,7 @@ const AdminProducts = () => {
                 <tr key={product.id} className="border-b border-border">
                   <td className="px-6 py-4">
                     <img
-                      src={getImageUrl(product.image)}
+                      src={product.image}
                       alt={product.title}
                       className="w-16 h-16 object-cover rounded-lg"
                     />
