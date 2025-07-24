@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroBanner1 from '@/assets/hero-banner-1.jpg';
 import heroBanner2 from '@/assets/hero-banner-2.jpg';
@@ -105,7 +104,7 @@ const HeroCarousel = () => {
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 border-white/20 hover:bg-white/20 backdrop-blur-sm text-white"
         onClick={scrollPrev}
       >
-        <ChevronLeft className="h-4 w-4" />
+        ‹
       </Button>
       
       <Button
@@ -114,7 +113,7 @@ const HeroCarousel = () => {
         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 border-white/20 hover:bg-white/20 backdrop-blur-sm text-white"
         onClick={scrollNext}
       >
-        <ChevronRight className="h-4 w-4" />
+        ›
       </Button>
 
       {/* Dots Indicator */}
