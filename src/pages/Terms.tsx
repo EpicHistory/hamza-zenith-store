@@ -84,7 +84,7 @@ const Terms = () => {
               <h2 className="text-2xl font-semibold mb-4">9. Contact Information</h2>
               <p className="text-muted-foreground leading-relaxed">
                 If you have any questions about these Terms & Conditions, please contact us at support@hamzastore.com or 
-                +92 300 1234567.
+                +92 370 0823338.
               </p>
             </div>
 
