@@ -24,11 +24,8 @@ const AdminLogin = () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log('Login attempt with credentials:', credentials);
-    
     try {
       const response = await adminApi.login(credentials);
-      console.log('Login response:', response);
       localStorage.setItem('adminToken', response.token);
       
       toast({
