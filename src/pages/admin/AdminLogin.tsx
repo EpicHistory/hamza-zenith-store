@@ -24,22 +24,19 @@ const AdminLogin = () => {
     e.preventDefault();
     setLoading(true);
 
+    console.log('Login attempt with credentials:', credentials);
+    
     try {
-      // Mock authentication - check credentials locally
-      if (credentials.username === 'admin' && credentials.password === 'admin123') {
-        // Create a mock token
-        const mockToken = 'mock-admin-token-' + Date.now();
-        localStorage.setItem('adminToken', mockToken);
-        
-        toast({
-          title: "Login successful!",
-          description: "Welcome to the admin dashboard.",
-        });
-        
-        navigate('/admin/dashboard');
-      } else {
-        throw new Error('Invalid credentials');
-      }
+      const response = await adminApi.login(credentials);
+      console.log('Login response:', response);
+      localStorage.setItem('adminToken', response.token);
+      
+      toast({
+        title: "Login successful!",
+        description: "Welcome to the admin dashboard.",
+      });
+      
+      navigate('/admin/dashboard');
     } catch (error) {
       toast({
         title: "Login failed",
