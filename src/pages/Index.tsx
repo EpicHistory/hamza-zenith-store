@@ -70,7 +70,7 @@ const Index = () => {
       {/* Featured Products */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Products</h2>
               <p className="text-xl text-muted-foreground">
