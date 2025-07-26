@@ -111,6 +111,20 @@ export const adminApi = {
     if (!response.ok) throw new Error('Failed to fetch users');
     return response.json();
   },
+
+  // Change Password
+  changePassword: async (passwordData: { currentPassword: string; newPassword: string }) => {
+    const response = await fetch(`${API_BASE_URL}/api/admin/change-password`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        ...getAuthHeader(),
+      },
+      body: JSON.stringify(passwordData),
+    });
+    if (!response.ok) throw new Error('Failed to change password');
+    return response.json();
+  },
 };
 
 // Helper function to get image URL

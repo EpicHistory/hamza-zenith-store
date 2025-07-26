@@ -8,13 +8,16 @@ import {
   LogOut, 
   Menu, 
   X,
-  Store
+  Store,
+  Settings
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import ChangePasswordModal from './ChangePasswordModal';
 
 const AdminLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [changePasswordOpen, setChangePasswordOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
@@ -89,7 +92,15 @@ const AdminLayout = () => {
           ))}
         </nav>
 
-        <div className="absolute bottom-6 left-6 right-6">
+        <div className="absolute bottom-6 left-6 right-6 space-y-2">
+          <Button 
+            variant="ghost" 
+            onClick={() => setChangePasswordOpen(true)}
+            className="w-full justify-start text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground"
+          >
+            <Settings className="h-5 w-5 mr-3" />
+            Change Password
+          </Button>
           <Button 
             variant="ghost" 
             onClick={handleLogout}
@@ -127,6 +138,12 @@ const AdminLayout = () => {
           <Outlet />
         </main>
       </div>
+
+      {/* Change Password Modal */}
+      <ChangePasswordModal 
+        open={changePasswordOpen} 
+        onOpenChange={setChangePasswordOpen} 
+      />
     </div>
   );
 };

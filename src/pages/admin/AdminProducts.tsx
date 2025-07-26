@@ -22,6 +22,8 @@ const AdminProducts = () => {
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [submitLoading, setSubmitLoading] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -61,6 +63,7 @@ const AdminProducts = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitLoading(true);
     
     const submitFormData = new FormData();
     submitFormData.append('title', formData.title);
@@ -96,6 +99,8 @@ const AdminProducts = () => {
         description: "Failed to save product",
         variant: "destructive",
       });
+    } finally {
+      setSubmitLoading(false);
     }
   };
 
@@ -113,6 +118,7 @@ const AdminProducts = () => {
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this product?')) return;
 
+    setDeleteLoading(id);
     try {
       await adminApi.deleteProduct(id);
       toast({
@@ -126,6 +132,8 @@ const AdminProducts = () => {
         description: "Failed to delete product",
         variant: "destructive",
       });
+    } finally {
+      setDeleteLoading(null);
     }
   };
 
@@ -236,8 +244,8 @@ const AdminProducts = () => {
                 <Button type="button" variant="outline" onClick={handleDialogClose}>
                   Cancel
                 </Button>
-                <Button type="submit" className="btn-accent">
-                  {editingProduct ? 'Update Product' : 'Add Product'}
+                <Button type="submit" disabled={submitLoading} className="btn-accent">
+                  {submitLoading ? 'Saving...' : editingProduct ? 'Update Product' : 'Add Product'}
                 </Button>
               </div>
             </form>
@@ -295,9 +303,14 @@ const AdminProducts = () => {
                         variant="outline"
                         size="sm"
                         onClick={() => handleDelete(product.id)}
+                        disabled={deleteLoading === product.id}
                         className="text-destructive hover:text-destructive"
                       >
-                        <Trash2 className="h-4 w-4" />
+                        {deleteLoading === product.id ? (
+                          <div className="h-4 w-4 animate-spin rounded-full border-2 border-destructive border-t-transparent" />
+                        ) : (
+                          <Trash2 className="h-4 w-4" />
+                        )}
                       </Button>
                     </div>
                   </td>

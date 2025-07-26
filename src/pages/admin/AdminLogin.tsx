@@ -100,13 +100,6 @@ const AdminLogin = () => {
             </Button>
           </form>
 
-          <div className="mt-6 p-4 bg-muted/50 rounded-xl">
-            <p className="text-sm text-muted-foreground">
-              Demo credentials:<br />
-              Username: <strong>admin</strong><br />
-              Password: <strong>admin123</strong>
-            </p>
-          </div>
         </div>
       </div>
     </div>
