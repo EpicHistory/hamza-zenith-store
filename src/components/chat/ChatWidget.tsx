@@ -205,10 +205,10 @@ const ChatWidget: React.FC = () => {
       {!isOpen && (
         <Button
           onClick={toggleChat}
-          className="w-14 h-14 rounded-full shadow-premium-lg hover:scale-110 transition-transform duration-300 bg-gradient-primary border-0"
+          className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-premium-lg hover:scale-110 transition-transform duration-300 bg-gradient-primary border-0"
           size="icon"
         >
-          <MessageCircle className="h-6 w-6" />
+          <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
         </Button>
       )}
 
