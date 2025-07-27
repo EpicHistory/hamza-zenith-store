@@ -213,7 +213,7 @@ const Products = () => {
               <SheetTrigger asChild>
                 <Button 
                   size="icon"
-                  className="fixed bottom-32 right-6 z-50 w-14 h-14 rounded-full shadow-2xl bg-primary hover:bg-primary/90 hover:scale-110 transition-all duration-300"
+                  className="fixed bottom-20 right-4 z-50 w-14 h-14 rounded-full shadow-2xl bg-primary hover:bg-primary/90 hover:scale-110 transition-all duration-300"
                 >
                   <SlidersHorizontal className="h-6 w-6" />
                 </Button>
