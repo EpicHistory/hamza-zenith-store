@@ -32,7 +32,7 @@ const About = () => {
       
       <div className="container mx-auto px-4 py-8">
         {/* Hero Section */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
           <h1 className="text-5xl font-bold mb-6">About Hamza Store</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We're more than just an online store – we're your trusted partner in finding quality products 
@@ -42,7 +42,7 @@ const About = () => {
         </div>
 
         {/* Story Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 animate-fade-in [animation-delay:200ms]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]">
           <div className="space-y-6">
             <h2 className="text-3xl font-bold">Our Story</h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -62,7 +62,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="relative animate-fade-in [animation-delay:400ms]">
+          <div className="relative opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]">
             <div className="card-premium p-8 text-center">
               <div className="text-4xl font-bold text-accent mb-2">1000+</div>
               <p className="text-muted-foreground mb-4">Happy Customers</p>
@@ -77,7 +77,7 @@ const About = () => {
         </div>
 
         {/* Values Section */}
-        <div className="mb-16 animate-fade-in [animation-delay:600ms]">
+        <div className="mb-16 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.8s_forwards]">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Values</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -89,8 +89,8 @@ const About = () => {
             {values.map((value, index) => (
               <div 
                 key={index} 
-                className="card-premium p-8 text-center group hover:scale-105 transition-transform duration-300 animate-fade-in"
-                style={{ animationDelay: `${800 + index * 200}ms` }}
+                className="card-premium p-8 text-center group hover:scale-105 transition-all duration-500 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards] hover:shadow-2xl"
+                style={{ animationDelay: `${1.0 + index * 0.2}s` }}
               >
                 <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <value.icon className="h-8 w-8 text-accent-foreground" />
@@ -103,7 +103,7 @@ const About = () => {
         </div>
 
         {/* Team Section */}
-        <div className="text-center card-premium p-12 animate-fade-in [animation-delay:1600ms]">
+        <div className="text-center card-premium p-12 opacity-0 animate-[fadeInUp_0.8s_ease-out_1.8s_forwards]">
           <h2 className="text-3xl font-bold mb-6">Meet Our Team</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Behind Hamza Store is a passionate team of professionals dedicated to making your shopping 

@@ -8,10 +8,10 @@ const Privacy = () => {
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8 animate-fade-in">Privacy Policy</h1>
+          <h1 className="text-4xl font-bold mb-8 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">Privacy Policy</h1>
           
-          <div className="card-premium p-8 space-y-8 animate-fade-in [animation-delay:200ms]">
-            <div className="animate-fade-in [animation-delay:400ms]">
+          <div className="card-premium p-8 space-y-8 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_0.6s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Information We Collect</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 We collect information you provide directly to us, such as when you create an account, make a purchase, 
@@ -25,7 +25,7 @@ const Privacy = () => {
               </ul>
             </div>
 
-            <div className="animate-fade-in [animation-delay:600ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_0.8s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">How We Use Your Information</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 We use the information we collect to:
@@ -40,7 +40,7 @@ const Privacy = () => {
               </ul>
             </div>
 
-            <div className="animate-fade-in [animation-delay:800ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_1.0s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Information Sharing</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, 
@@ -53,7 +53,7 @@ const Privacy = () => {
               </ul>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1000ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_1.2s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Data Security</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We implement appropriate security measures to protect your personal information against unauthorized access, 
@@ -62,7 +62,7 @@ const Privacy = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1200ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_1.4s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Cookies and Tracking</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, 
@@ -71,7 +71,7 @@ const Privacy = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1400ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_1.6s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Your Rights</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 You have the right to:
@@ -84,7 +84,7 @@ const Privacy = () => {
               </ul>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1600ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_1.8s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Children's Privacy</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Our service is not intended for children under 13 years of age. We do not knowingly collect personal 
@@ -93,7 +93,7 @@ const Privacy = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1800ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_2.0s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Changes to This Policy</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We may update this privacy policy from time to time. We will notify you of any changes by posting the new 
@@ -101,7 +101,7 @@ const Privacy = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:2000ms]">
+            <div className="opacity-0 animate-[slideInRight_0.7s_ease-out_2.2s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
               <p className="text-muted-foreground leading-relaxed">
                 If you have any questions about this Privacy Policy, please contact us at privacy@hamzastore.com or 

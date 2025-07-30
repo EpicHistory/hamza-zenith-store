@@ -8,10 +8,10 @@ const Terms = () => {
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8 animate-fade-in">Terms & Conditions</h1>
+          <h1 className="text-4xl font-bold mb-8 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">Terms & Conditions</h1>
           
-          <div className="card-premium p-8 space-y-8 animate-fade-in [animation-delay:200ms]">
-            <div className="animate-fade-in [animation-delay:400ms]">
+          <div className="card-premium p-8 space-y-8 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_0.6s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
               <p className="text-muted-foreground leading-relaxed">
                 By accessing and using Hamza Store, you accept and agree to be bound by the terms and provision of this agreement. 
@@ -19,7 +19,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:600ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_0.8s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">2. Product Information</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We strive to provide accurate product descriptions, images, and pricing information. However, we do not warrant that 
@@ -28,7 +28,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:800ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_1.0s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">3. Pricing and Payment</h2>
               <p className="text-muted-foreground leading-relaxed">
                 All prices are subject to change without notice. We reserve the right to modify prices at any time. Payment is due at 
@@ -36,7 +36,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1000ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_1.2s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">4. Order Processing and Delivery</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Orders are processed within 1-2 business days. Delivery times may vary depending on your location. We are not 
@@ -45,7 +45,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1200ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_1.4s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">5. Returns and Exchanges</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We want you to be completely satisfied with your purchase. If you're not happy with your order, please contact us 
@@ -54,7 +54,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1400ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_1.6s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">6. Privacy and Data Protection</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We are committed to protecting your privacy. Personal information collected during the ordering process is used solely 
@@ -63,7 +63,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1600ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_1.8s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">7. Limitation of Liability</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Hamza Store shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including 
@@ -72,7 +72,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:1800ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_2.0s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">8. Governing Law</h2>
               <p className="text-muted-foreground leading-relaxed">
                 These terms and conditions are governed by and construed in accordance with the laws of Pakistan. Any disputes 
@@ -80,7 +80,7 @@ const Terms = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in [animation-delay:2000ms]">
+            <div className="opacity-0 animate-[slideInLeft_0.7s_ease-out_2.2s_forwards] hover:bg-muted/30 p-4 rounded-lg transition-all duration-300">
               <h2 className="text-2xl font-semibold mb-4">9. Contact Information</h2>
               <p className="text-muted-foreground leading-relaxed">
                 If you have any questions about these Terms & Conditions, please contact us at support@hamzastore.com or 
